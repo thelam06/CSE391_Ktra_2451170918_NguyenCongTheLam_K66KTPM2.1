@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks List</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-5" style="max-width: 700px;">
+
+        <div class="card p-4 mb-4 shadow-sm" style="background: whitesmoke;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold m-0">Task List</h2>
+                <button id="btn-open-form" class="btn btn-primary fw-semibold"
+                    style="background: blueviolet; color:white">+ Add Task</button>
+            </div>
+
+            <div id="task-list-container" class="">
+                <div class="card p-3 mb-2 bg-body border-0 shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <small class="text-muted d-block">Task</small>
+                            <strong>Go to gym</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <small class="text-muted d-block">Priority</small>
+                            <span class="text-danger fw-bold">High</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="badge bg-secondary">To Do</span>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <button class="btn btn-sm btn-outline-dark me-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <small class="text-muted d-block">Task</small>
+                            <strong>Read a book</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <small class="text-muted d-block">Priority</small>
+                            <span class="text-success fw-bold">Low</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="badge bg-secondary">Done</span>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <button class="btn btn-sm btn-outline-dark me-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <small class="text-muted d-block">Task</small>
+                            <strong>Go to market</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <small class="text-muted d-block">Priority</small>
+                            <span class="text-warning fw-bold">Medium</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="badge bg-secondary">In Progress</span>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <button class="btn btn-sm btn-outline-dark me-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <small class="text-muted d-block">Task</small>
+                            <strong>Write technical report</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <small class="text-muted d-block">Priority</small>
+                            <span class="text-danger fw-bold">High</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="badge bg-secondary">To Do</span>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <button class="btn btn-sm btn-outline-dark me-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <small class="text-muted d-block">Task</small>
+                            <strong>Learn React</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <small class="text-muted d-block">Priority</small>
+                            <span class="text-warning fw-bold">Medium</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span class="badge bg-secondary">In Progress</span>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <button class="btn btn-sm btn-outline-dark me-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="form-container" class="card p-4 shadow-sm d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold m-0">Add Task</h4>
+                <span id="btn-close-form" class="fs-4 text-muted" style="cursor: pointer;">&times;</span>
+            </div>
+
+            <div id="error-box" class="alert alert-danger d-none"></div>
+            <div id="success-box" class="alert alert-success d-none"></div>
+
+            <form id="task-form">
+                <div class="mb-3">
+                    <label class="form-label text-muted fw-semibold">Task</label>
+                    <input type="text" id="input-task-title" class="form-control" placeholder="Type your task here...">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label text-muted fw-semibold">Priority</label>
+                    <select id="select-task-priority" class="form-select w-50">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-secondary px-4 fw-semibold">Add</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
